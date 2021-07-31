@@ -1,0 +1,9 @@
+POST http://localhost:3000/classes/new
+content-type: application/json
+
+{
+    "class": "X",
+    "section": "A",
+    "key": "X20212022",
+    "password": "test"
+}

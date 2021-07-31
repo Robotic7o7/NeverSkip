@@ -33,6 +33,8 @@ var studentRouter = require('./routes/students');
 var teacherRouter = require('./routes/teachers');
 var classRouter = require('./routes/classes');
 var authRouter = require('./routes/auth');
+var subjectRouter = require('./routes/subjects');
+var uploadRouter = require('./routes/upload');
 
 var app = express();
 
@@ -42,6 +44,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
+app.use('/uploads', express.static('uploads'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -49,5 +53,7 @@ app.use('/auth', authRouter);
 app.use('/student', studentRouter);
 app.use('/teacher', teacherRouter);
 app.use('/classes', classRouter);
+app.use('/subject', subjectRouter);
+app.use('/upload', uploadRouter);
 
 module.exports = app;
