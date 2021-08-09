@@ -32,7 +32,8 @@ const studentSchema = mongoose.Schema({
 
     classRoom: {
         type: mongoose.Schema.Types.ObjectId,
-        ref:"Class"
+        ref:"Class",
+        default:"61077a2c3fc5f80f74fd915a"
     }
 
 })

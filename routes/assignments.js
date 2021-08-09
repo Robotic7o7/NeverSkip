@@ -26,6 +26,35 @@ router.get("/:id", async function (req, res) {
     }
 });
 
+//get assignments by class ID
+router.get("/class/:id", async function (req, res) {
+    try {
+        const assignments = await Assignment.find({ classAssigned: req.params.id});
+        res.status(200).json(assignments);
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+});
+
+//get assignments by subject ID
+router.get("/subject/:id", async function (req, res) {
+    try {
+        const assignments = await Assignment.find({ subject: req.params.id});
+        res.status(200).json(assignments);
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+});
+
+//get assignments by teacher ID
+router.get("/teacher/:id", async function (req, res) {
+    try {
+        const assignments = await Assignment.find({ teacherAssigned: req.params.id});
+        res.status(200).json(assignments);
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+});
 
 
 //new assignment

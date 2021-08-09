@@ -35,6 +35,8 @@ var classRouter = require('./routes/classes');
 var authRouter = require('./routes/auth');
 var subjectRouter = require('./routes/subjects');
 var uploadRouter = require('./routes/upload');
+var assignmentRouter = require('./routes/assignments');
+var submissionRouter = require('./routes/submissions');
 
 var app = express();
 
@@ -55,5 +57,7 @@ app.use('/teacher', teacherRouter);
 app.use('/classes', classRouter);
 app.use('/subject', subjectRouter);
 app.use('/upload', uploadRouter);
+app.use('/assignment', assignmentRouter);
+app.use('/submission', submissionRouter);
 
 module.exports = app;

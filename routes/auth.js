@@ -30,7 +30,7 @@ router.post("/student/login", async function (req, res) {
                     if (err) {
                         res.status(403).json(err);
                     } else {
-                        res.status(200).json({ token: token, student_id: student._id, name: student.name, gender: student.gender, admission_number: student.admission_number, classRoom:student.classRoom });
+                        res.status(200).json({ token: token, student_id: student._id, dob:student.dob, email:student.email, name: student.name, gender: student.gender, admission_number: student.admission_number, classRoom:student.classRoom });
                     }
                 }
             );
